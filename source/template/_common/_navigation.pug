@@ -1,0 +1,52 @@
+-
+	var nav = [
+		{text: 'Товары и услуги', href: '#', mods: 'nav__link_arrow'},
+		{text: 'Подбор колес', href: '#', mods: 'nav__link_arrow'},
+		{text: 'О компании', href: '#', mods: 'nav__link_arrow'},
+		{text: 'Доставка и оплата', href: '#', mods: ''},
+		{text: 'Контакты', href: '#', mods: ''},
+		{text: 'Новости', href: '#', mods: ''}
+	];
+
+	var firstSecondFloor = [
+		{text: 'Выбор серий по сфере применения', href: '#'},
+		{text: 'Выбор серий по сфере применения', href: '#'},
+		{text: 'Выбор серий по сфере применения', href: '#'},
+		{text: 'Выбор серий по сфере применения', href: '#'},
+		{text: 'Выбор серий по сфере применения', href: '#'}
+	];
+
+	var secondSecondFloor = [
+		{text: 'Колеса для строительных лесов и передвижных подмостей', href: '#'},
+		{text: 'Колеса для строительных лесов и передвижных подмостей', href: '#'},
+		{text: 'Колеса для строительных лесов и передвижных подмостей', href: '#'},
+		{text: 'Колеса для строительных лесов и передвижных подмостей', href: '#'},
+		{text: 'Колеса для строительных лесов и передвижных подмостей', href: '#'},
+		{text: 'Колеса для строительных лесов и передвижных подмостей', href: '#'}
+	];
+
+	var thirdSecondFloor = [
+		{text: 'Колеса для коптилльных рам', href: '#'},
+		{text: 'Колеса для коптилльных рам', href: '#'},
+		{text: 'Колеса для коптилльных рам', href: '#'},
+		{text: 'Колеса для коптилльных рам', href: '#'},
+		{text: 'Колеса для коптилльных рам', href: '#'}
+	];
+
+nav.nav
+	ul.nav__list
+		each item in nav
+			li.nav__item
+				a(class="nav__link " + item.mods href="" + item.href) #{item.text}
+
+				if(item.text === 'Товары и услуги')
+					.nav__secondfloor
+						+nav-floors(firstSecondFloor)
+				if(item.text === 'Подбор колес')
+					.nav__secondfloor
+						+nav-floors(secondSecondFloor)
+				if(item.text === 'О компании')
+					.nav__secondfloor
+						+nav-floors(thirdSecondFloor)
+					
+		

@@ -1,0 +1,42 @@
+.tabs {
+
+	&__controls {
+		display: inline-block;
+		font-size: 0;
+
+		&-item {
+			display: inline-block;
+
+
+			&.active .tabs__controls-link {
+				color: #393939;
+				background: #fff;
+			}
+		}
+
+		&-link {
+			display: block;
+			padding: 20px 35px;
+			font-size: 14px;
+			color: #fff;
+			letter-spacing: 1px;
+			background: $black;
+			text-decoration: none;
+			text-transform: uppercase;
+
+			&:hover {
+				color: #393939;
+				background: #fff;
+			}
+		}
+	}
+
+	&__list {
+		padding: 25px;
+		background: #fff;
+
+		&-item {
+			display: none;
+		}
+	}
+}

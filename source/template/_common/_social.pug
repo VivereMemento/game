@@ -1,0 +1,15 @@
+.social
+    - 
+        var items = [
+        {name: "Instagram", link: "https://www.instagram.com/", url: "fa fa-instagram", mods: [' social__link-in']},
+            {name: "Facebook", link: "https://facebook.com", url: "fa fa-facebook", mods: [' social__link-fb']}
+        ]
+    ul.social__list
+        each item in items
+            li(class="social__item")
+                a(class='social__link' + item.mods[0] href="" + item.link target="_blank") #{item.name}
+                    i( class="" + item.url aria-hidden="true")
+
+                .social__followers
+                    span#followers.social__followers-count 20 000
+                    span followers

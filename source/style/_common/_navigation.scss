@@ -1,0 +1,202 @@
+.nav {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+
+	@include phones {
+		height: auto;
+		padding-bottom: 30px;
+		background: #000;
+	}
+
+	&__list {
+		width: 90%;
+		display: flex;
+		justify-content: center;
+
+		@include tablets {
+			width: 100%;
+		}
+
+		@include phones {
+			flex-wrap: wrap;
+		}
+	}
+
+	&__item {
+		height: 100%;
+
+		&:hover {
+			background: #edad00;
+
+			& .nav__link {
+			color: #000;
+
+				&:after {
+					box-shadow: 3px 3px 0 0 #000;
+					transform: rotateX(160deg);
+				}
+
+				@include phones {
+					color: #fff;
+				}
+			}
+
+			& .nav__secondfloor {
+				display: flex;
+				justify-content: center;
+			}
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		@include netbook {
+			&:nth-child(4),
+			&:nth-child(5),
+			&:nth-child(6) {
+				display: none;
+			}
+		}
+
+		@include phones {
+			width: 100%;
+			height: auto;
+
+			&:hover {
+				background: #000;
+			}
+
+			&:nth-child(4),
+			&:nth-child(5),
+			&:nth-child(6) {
+				display: block;
+			}
+		}
+	}
+  
+	&__link {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		padding: 0 20px;
+		font: 300 12px/14px $RC;
+		color: #fff;
+		text-decoration: none;
+		text-transform: uppercase;
+		position: relative;
+
+		@include tablets {
+			font-size: 11px;
+			padding: 0 12px;
+		}
+
+		@include phones {
+			height: auto;
+			padding: 10px 0;
+			padding-left: 35px;
+
+			&.active {
+				color: #000;
+				background-color: #edad00;
+				
+				&:hover {
+					color: #000;
+				}
+
+				&:before {
+					box-shadow: -3px -3px 0 0 #000;
+					top: 17px;
+				}
+			}
+		}
+
+		&_arrow:before,
+		&_arrow:after {
+			display: inline-block;
+			content: '';
+			width: 8px;
+			height: 8px;
+			margin-left: 10px;
+			box-shadow: 3px 3px 0 0 #fff;
+			transform: rotate(45deg);
+			position: relative;
+			top: -6px;
+			transition: .3s;
+
+			@include tablets {
+				margin-left: 8px;
+			}
+		}
+
+		&_arrow:before {
+			display: none;
+
+			@include phones {
+				display: block;
+				position: absolute;
+				top: 6px;
+				left: 4px;
+			}
+		}
+
+		&_arrow:after {
+			@include phones {
+				display: none;
+			}
+		}
+	}
+
+	&__secondfloor {
+		display: none;
+		width: 100%;
+		padding-top: 40px;
+		padding-bottom: 20px;
+		background: #edad00;
+		position: absolute;
+		top: 100%;
+		left: 0;
+		z-index: 2;
+
+		@include phones {
+			position: static;
+			display: block;
+			max-height: 0;
+			padding: 0;
+			overflow: hidden;
+			transition: max-height 0.2s ease-out;
+		}
+
+		&-list {
+			width: 60%;
+			display: flex;
+			flex-wrap: wrap;
+
+			@include phones {
+				width: 100%;
+				padding: 20px;
+				padding-left: 35px;
+			}
+		}
+
+		&-item {
+			width: 50%;
+			margin-bottom: 20px;
+
+			@include phones {
+				width: 100%;
+			}
+		}
+
+		&-link {
+			color: $black;
+			text-decoration: none;
+
+			&:hover {
+				color: #fff;
+			}
+		}
+	}
+}

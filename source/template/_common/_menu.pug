@@ -1,0 +1,24 @@
+.menu
+	.menu__inner
+		.menu__title
+			| Колеса и ролики
+		-
+			var list = [
+			{text: 'Колеса и ролик и с контактным слоем из черной и серой стандартной резины', href: '#', src: 'menu-img-1.png'},
+			{text: 'Колеса и ролик и с контактным слоем из черной и серой стандартной резины', href: '#', src: 'menu-img-1.png'},
+			{text: 'Колеса и ролик и с контактным слоем из черной и серой стандартной резины', href: '#', src: 'menu-img-1.png'},
+			{text: 'Колеса и ролик и с контактным слоем из черной и серой стандартной резины', href: '#', src: 'menu-img-1.png'},
+			{text: 'Колеса и ролик и с контактным слоем из черной и серой стандартной резины', href: '#', src: 'menu-img-1.png'},
+			{text: 'Колеса и ролик и с контактным слоем из черной и серой стандартной резины', href: '#', src: 'menu-img-1.png'},
+			{text: 'Колеса и ролик и с контактным слоем из черной и серой стандартной резины', href: '#', src: 'menu-img-1.png'},
+			{text: 'Колеса и ролик и с контактным слоем из черной и серой стандартной резины', href: '#', src: 'menu-img-1.png'},
+			];
+		ul.menu__list
+			each elem in list
+				li.menu__item
+					a.menu__link(href='' + elem.href)
+						figure.menu__img-wrap
+							.menu__img
+								img(src='./assets/img/' + elem.src)
+							figcaption.menu__desc
+								span.menu__text #{elem.text}

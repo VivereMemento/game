@@ -1,0 +1,39 @@
+header.header
+	+netbook-menu(['Доставка и оплата','Контакты','Новости'])
+	.header__part.header__part-one
+		+logo('Fregat', "logo.png", "")
+		.phones
+			span.phones__number +38 (068) 321 56 90
+			span.phones__number +38 (068) 321 56 90
+	.header__part.header__part-two
+		include ../_common/_navigation
+	.header__part.header__part-three
+		.basket
+			.basket__item
+				| Товаров:
+				span.basket__count 3
+			.basket__item
+				| Сумм:
+				span.basket__sum 667.89 грн
+		.header__login-btn
+			svg.header__login-img
+				use(href="./assets/img/sprite.svg#login")
+		div(id='search-btn' class='header__search-btn')
+			svg.header__search-img
+				use(href="./assets/img/sprite.svg#search")
+		.menu-trigger
+			.menu-trigger__item
+			.menu-trigger__item
+			.menu-trigger__item
+	.search
+		.search__wrap
+			.search__item
+				.search__input
+					input(type='text' name='search' required)
+					label Поиск
+				a.btn.btn_color(href="#") Найти
+			.search__item
+				.search__input
+					input(type='text' name='search-by-code' required)
+					label Поиск по коду
+				a.btn.btn_color(href="#") Найти

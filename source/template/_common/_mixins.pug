@@ -1,0 +1,257 @@
+
+//- ************************************************************ //
+//-                     COMMON MIXINS
+//- ************************************************************ //
+
+//- ----------- btn -------------- //
+
+mixin btn-up
+	.btn-up
+		.btn(href='#') Вверх
+//- ----------- logo -------------- //
+
+mixin logo(text, src, mods)
+	div(class="logo " + ((mods === false) ? "" : mods))
+		a.logo__link(href="#")
+			img.logo__img(src="assets/img/" + src)
+			.logo__text=text
+
+//- ----------- checkbox -------------- //
+
+mixin checkbox(text)
+	label.checkbox
+		input.checkbox__input(name="location" type="radio")
+		.checkbox__elem
+		.checkbox__text= text
+
+//- ----------- menu -------------- //
+
+mixin menu(array, active, mods)
+	ul(class="menu__list" + mods)
+		each item in array
+			li(class="menu__item" + (item === active ? " active" : ""))
+				a(class="menu__link" href="#")=item
+
+//- ----------- slideshow -------------- //
+
+mixin slideshow(array, id)
+	.slideshow__display
+		ul(id="" + (id !== "") ? id : "").slideshow__list
+			each item in array
+				li.slideshow__item.fade
+					img.slideshow__img(src="" + item.url alt="slide")
+					if array == wallProduct
+						.description.wall__description_mods
+							.description-text #{item.text}
+							.description-price(class="" + ((item.sale !== "") ? 'description-price_color' + '' : '') data-sale="" + item.sale) #{item.price}  
+		div.dots
+			span(class="dot")
+			span(class="dot")
+			span(class="dot")
+			span(class="dot")
+mixin price(value, mods)
+	div(class='price' + (mods ? ' ' + mods : ''))
+		span.price__text #{value}
+		span.price__numbers 134.44
+		span.price__currency грн
+
+//- ************************************************************ //
+//-                     PRIVATE MIXINS
+//- ************************************************************ // 
+
+//- ----------- navigation second floor -------------- //
+
+
+mixin nav-floors(array)
+	ul(class="nav__secondfloor-list")
+		each item in array
+			li(class="nav__secondfloor-item")
+				a(class="nav__secondfloor-link" href="" + item.href ) #{item.text}
+
+//- ----------- navigation second floor -------------- //
+
+mixin netbook-menu(array)
+	.netbook-menu-wrap
+		ul(class="netbook-menu")
+			each item in array
+				li(class="netbook-menu__item")
+					a(class="netbook-menu__link" href="#") #{item}
+//- ----------- banner slider -------------- //
+mixin slider
+	.slider
+		-
+			var slides = [
+				{text: 'Колеса и ролики для тележек Произведено в Украине', src: './assets/img/banner-big-bg.jpg', href: '#'},
+				{text: 'Колеса и ролики для тележек Произведено в Украине', src: './assets/img/banner-small-1.jpg', href: '#'},
+				{text: 'Колеса и ролики для тележек Произведено в Украине', src: './assets/img/banner-small-2.jpg', href: '#'}
+			];
+
+		ul.slider__list
+			each slide in slides
+				li.slider__item
+					figure.slider__img-wrap
+						img.slider__img(src='' + slide.src)
+
+					.slider__title
+						span #{slide.text}
+						a.btn.btn_color(href='' + slide.href) Перейти
+
+//- ----------- catalog -------------- //
+mixin catalog__list-item(mods)
+	.catalog__list-item
+		.catalog__list-item-parts
+			.catalog__list-item-part
+				figure(class='catalog__list-img-wrap' + (mods ? mods : ''))
+					img.catalog__list-img(src='./assets/img/catalog-list-img.png')
+			.catalog__list-item-part
+				.catalog__list-params
+					.catalog__list-params-material
+						a.btn(href='#') Серия 40
+						span полиамид / полиуретан
+					.catalog__list-params-heading
+						span Резина стандартная черная
+						span / сталь (эконом серия)
+					.catalog__list-params-options
+						div(class='catalog__list-params-options-item catalog__list-params-options-temp')
+							| -20&deg;C - +60&deg;C
+						div(class='catalog__list-params-options-item catalog__list-params-options-weight')
+							| 50 - 205кг
+						div(class='catalog__list-params-options-item catalog__list-params-options-price')
+							| Цена от 38.43 грн
+			.catalog__list-item-part
+				.catalog__list-desc
+					.catalog__list-desc-heading
+						| Колесо из стандартной литой резины черного цвета
+					.catalog__list-desc-text
+						| Диск изготовлен прессованием из листовой стали, скреплен высокопрочными стальными заклепками, с трубчатой стальной ступицей, на роликовом подшипнике. Поверхность деталей оцинкована и подвергнута пассивации. Диск изготовлен прессованием из листовой стали, скреплен высокопрочными стальными
+			.catalog__list-item-part
+				-
+					var variations = [
+					'./assets/img/catalog-list-img.png',
+					'./assets/img/catalog-list-img.png',
+					'./assets/img/catalog-list-img.png',
+					'./assets/img/catalog-list-img.png',
+					'./assets/img/catalog-list-img.png',
+					'./assets/img/catalog-list-img.png',
+					'./assets/img/catalog-list-img.png',
+					'./assets/img/catalog-list-img.png',
+					'./assets/img/catalog-list-img.png'
+					]
+				ul.catalog__list-variations
+					each variation in variations
+						li.catalog__list-variations-item
+							figure.catalog__list-variations-img-wrap
+								img.catalog__list-variations-img(src='' + variation)
+		.catalog__list-show-btn
+
+//- ----------- series -------------- //
+mixin series__table-product-params
+	.params-js.series__table-product-params
+		div(class='series__table-product-cell series__table-code')
+			a.series__table-code-link(href='#') 11 20 080 ЗИ
+		div(class='series__table-product-cell series__table-diameter')
+			| 80
+		div(class='series__table-product-cell series__table-radius')
+			| 100
+		div(class='series__table-product-cell series__table-corner')
+			| 36
+		div(class='series__table-product-cell series__table-thickness')
+			| 2
+		div(class='series__table-product-cell series__table-distance')
+			| 3
+		div(class='series__table-product-cell series__table-size')
+			| 105x80
+		div(class='series__table-product-cell series__table-width')
+			| 080x060x9
+		div(class='series__table-product-cell series__table-weight')
+			| 75.00
+		div(class='series__table-product-cell series__table-provider')
+			figure(class='series__table-provider-img-wrap')
+				img.series__table-provider-img(src='./assets/img/icons/flag.png')
+			a.series__table-provider-link(src='#') RoCarr
+		div(class='price-js series__table-product-cell series__table-price')
+			span 133.34 грн
+		div(class='series__table-product-cell series__table-quantity')
+			div(class="add-input js-add-count")
+				input(type="text" value="1")
+				span.add-input__btn.add-input__btn_up
+				span.add-input__btn.add-input__btn_down
+		div(class='total-price-js series__table-product-cell series__table-sum')
+			span 133.34 грн
+		div(class='series__table-product-cell series__table-basket')
+			a.series__table-basket-link(href='#')
+
+//- ----------- series -------------- //
+mixin series__table-product-mobile
+	div(class='series__table-product_mobile')
+		.series__table-product-head
+			.series__table-product-head-inner
+				figure(class='series__table-product-img-wrap')
+					img.series__table-product-img(src='./assets/img/catalog-list-img.png')
+				.series__table-product-name
+					| Колеса с поворотным кронштейном с площадкой
+			.series__table-product-close
+		.series__table-product-params
+			.series__table-product-params-inner
+				.series__table-product-params-list-wrap
+					-
+						var params = [
+							{key: 'код', value: '11 20 080 ЗИ'},
+							{key: 'диаметр(мм)', value: '80'},
+							{key: 'высота(мм)', value: '100'},
+							{key: 'высота(мм)', value: '2'},
+							{key: 'диаметр(мм)', value: '3'},
+							{key: 'потавщик', value: 'RoCarr'},
+							{key: 'диаметр(мм)', value: '80'},
+							{key: 'высота(мм)', value: '100'},
+							{key: 'высота(мм)', value: '2'}
+						]
+					ul.series__table-product-params-list
+						each param in params
+							li(class='series__table-product-params-item')
+								span #{param.key}:
+								if (param.key === 'код')
+									a.series__table-code-link(href='#') 11 20 080 ЗИ
+								else if (param.key === 'потавщик')
+									figure(class='series__table-provider-img-wrap')
+										img.series__table-provider-img(src='./assets/img/icons/flag.png')
+									a.series__table-provider-link(src='#') RoCarr
+								else
+									span #{param.value}:
+
+				.series__table-product-params-basket
+					.series__table-product-params-price
+						+price('Цена')
+					a.series__table-basket-link(href='#')
+		.series__table-product-params
+			.series__table-product-params-inner
+				.series__table-product-params-list-wrap
+					-
+						var params = [
+						{key: 'код', value: '11 20 080 ЗИ'},
+						{key: 'диаметр(мм)', value: '80'},
+						{key: 'высота(мм)', value: '100'},
+						{key: 'высота(мм)', value: '2'},
+						{key: 'диаметр(мм)', value: '3'},
+						{key: 'потавщик', value: 'RoCarr'},
+						{key: 'диаметр(мм)', value: '80'},
+						{key: 'высота(мм)', value: '100'},
+						{key: 'высота(мм)', value: '2'}
+						]
+					ul.series__table-product-params-list
+						each param in params
+							li(class='series__table-product-params-item')
+								span #{param.key}:
+								if (param.key === 'код')
+									a.series__table-code-link(href='#') 11 20 080 ЗИ
+								else if (param.key === 'потавщик')
+									figure(class='series__table-provider-img-wrap')
+										img.series__table-provider-img(src='./assets/img/icons/flag.png')
+									a.series__table-provider-link(src='#') RoCarr
+								else
+									span #{param.value}:
+
+				.series__table-product-params-basket
+					.series__table-product-params-price
+						+price('Цена')
+					a.series__table-basket-link(href='#')

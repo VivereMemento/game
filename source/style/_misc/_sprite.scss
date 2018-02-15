@@ -1,0 +1,398 @@
+// SCSS variables are information about icon's compiled state, stored under its original file name
+//
+// .icon-home {
+//   width: $icon-home-width;
+// }
+//
+// The large array-like variables contain all information about a single icon
+// $icon-home: x y offset_x offset_y width height total_width total_height image_path;
+//
+// At the bottom of this section, we provide information about the spritesheet itself
+// $spritesheet: width height image $spritesheet-sprites;
+$basket-name: 'basket';
+$basket-x: 0px;
+$basket-y: 119px;
+$basket-offset-x: 0px;
+$basket-offset-y: -119px;
+$basket-width: 18px;
+$basket-height: 18px;
+$basket-total-width: 105px;
+$basket-total-height: 1052px;
+$basket-image: '../img/sprite.png';
+$basket: (0px, 119px, 0px, -119px, 18px, 18px, 105px, 1052px, '../img/sprite.png', 'basket', );
+$best-price-guarantee-name: 'best-price-guarantee';
+$best-price-guarantee-x: 0px;
+$best-price-guarantee-y: 430px;
+$best-price-guarantee-offset-x: 0px;
+$best-price-guarantee-offset-y: -430px;
+$best-price-guarantee-width: 29px;
+$best-price-guarantee-height: 38px;
+$best-price-guarantee-total-width: 105px;
+$best-price-guarantee-total-height: 1052px;
+$best-price-guarantee-image: '../img/sprite.png';
+$best-price-guarantee: (0px, 430px, 0px, -430px, 29px, 38px, 105px, 1052px, '../img/sprite.png', 'best-price-guarantee', );
+$cart-black-name: 'cart_black';
+$cart-black-x: 0px;
+$cart-black-y: 96px;
+$cart-black-offset-x: 0px;
+$cart-black-offset-y: -96px;
+$cart-black-width: 18px;
+$cart-black-height: 18px;
+$cart-black-total-width: 105px;
+$cart-black-total-height: 1052px;
+$cart-black-image: '../img/sprite.png';
+$cart-black: (0px, 96px, 0px, -96px, 18px, 18px, 105px, 1052px, '../img/sprite.png', 'cart_black', );
+$clock-name: 'clock';
+$clock-x: 0px;
+$clock-y: 75px;
+$clock-offset-x: 0px;
+$clock-offset-y: -75px;
+$clock-width: 16px;
+$clock-height: 16px;
+$clock-total-width: 105px;
+$clock-total-height: 1052px;
+$clock-image: '../img/sprite.png';
+$clock: (0px, 75px, 0px, -75px, 16px, 16px, 105px, 1052px, '../img/sprite.png', 'clock', );
+$date-name: 'date';
+$date-x: 0px;
+$date-y: 35px;
+$date-offset-x: 0px;
+$date-offset-y: -35px;
+$date-width: 16px;
+$date-height: 15px;
+$date-total-width: 105px;
+$date-total-height: 1052px;
+$date-image: '../img/sprite.png';
+$date: (0px, 35px, 0px, -35px, 16px, 15px, 105px, 1052px, '../img/sprite.png', 'date', );
+$econom-name: 'econom';
+$econom-x: 0px;
+$econom-y: 839px;
+$econom-offset-x: 0px;
+$econom-offset-y: -839px;
+$econom-width: 105px;
+$econom-height: 44px;
+$econom-total-width: 105px;
+$econom-total-height: 1052px;
+$econom-image: '../img/sprite.png';
+$econom: (0px, 839px, 0px, -839px, 105px, 44px, 105px, 1052px, '../img/sprite.png', 'econom', );
+$flag-name: 'flag';
+$flag-x: 0px;
+$flag-y: 17px;
+$flag-offset-x: 0px;
+$flag-offset-y: -17px;
+$flag-width: 22px;
+$flag-height: 13px;
+$flag-total-width: 105px;
+$flag-total-height: 1052px;
+$flag-image: '../img/sprite.png';
+$flag: (0px, 17px, 0px, -17px, 22px, 13px, 105px, 1052px, '../img/sprite.png', 'flag', );
+$login-name: 'login';
+$login-x: 0px;
+$login-y: 55px;
+$login-offset-x: 0px;
+$login-offset-y: -55px;
+$login-width: 15px;
+$login-height: 15px;
+$login-total-width: 105px;
+$login-total-height: 1052px;
+$login-image: '../img/sprite.png';
+$login: (0px, 55px, 0px, -55px, 15px, 15px, 105px, 1052px, '../img/sprite.png', 'login', );
+$option-1-name: 'option_1';
+$option-1-x: 0px;
+$option-1-y: 314px;
+$option-1-offset-x: 0px;
+$option-1-offset-y: -314px;
+$option-1-width: 51px;
+$option-1-height: 31px;
+$option-1-total-width: 105px;
+$option-1-total-height: 1052px;
+$option-1-image: '../img/sprite.png';
+$option-1: (0px, 314px, 0px, -314px, 51px, 31px, 105px, 1052px, '../img/sprite.png', 'option_1', );
+$option-2-name: 'option_2';
+$option-2-x: 0px;
+$option-2-y: 888px;
+$option-2-offset-x: 0px;
+$option-2-offset-y: -888px;
+$option-2-width: 65px;
+$option-2-height: 47px;
+$option-2-total-width: 105px;
+$option-2-total-height: 1052px;
+$option-2-image: '../img/sprite.png';
+$option-2: (0px, 888px, 0px, -888px, 65px, 47px, 105px, 1052px, '../img/sprite.png', 'option_2', );
+$option-3-name: 'option_3';
+$option-3-x: 0px;
+$option-3-y: 998px;
+$option-3-offset-x: 0px;
+$option-3-offset-y: -998px;
+$option-3-width: 53px;
+$option-3-height: 54px;
+$option-3-total-width: 105px;
+$option-3-total-height: 1052px;
+$option-3-image: '../img/sprite.png';
+$option-3: (0px, 998px, 0px, -998px, 53px, 54px, 105px, 1052px, '../img/sprite.png', 'option_3', );
+$option-4-name: 'option_4';
+$option-4-x: 0px;
+$option-4-y: 516px;
+$option-4-offset-x: 0px;
+$option-4-offset-y: -516px;
+$option-4-width: 59px;
+$option-4-height: 39px;
+$option-4-total-width: 105px;
+$option-4-total-height: 1052px;
+$option-4-image: '../img/sprite.png';
+$option-4: (0px, 516px, 0px, -516px, 59px, 39px, 105px, 1052px, '../img/sprite.png', 'option_4', );
+$option-5-name: 'option_5';
+$option-5-x: 0px;
+$option-5-y: 388px;
+$option-5-offset-x: 0px;
+$option-5-offset-y: -388px;
+$option-5-width: 52px;
+$option-5-height: 37px;
+$option-5-total-width: 105px;
+$option-5-total-height: 1052px;
+$option-5-image: '../img/sprite.png';
+$option-5: (0px, 388px, 0px, -388px, 52px, 37px, 105px, 1052px, '../img/sprite.png', 'option_5', );
+$option-6-name: 'option_6';
+$option-6-x: 0px;
+$option-6-y: 696px;
+$option-6-offset-x: 0px;
+$option-6-offset-y: -696px;
+$option-6-width: 50px;
+$option-6-height: 42px;
+$option-6-total-width: 105px;
+$option-6-total-height: 1052px;
+$option-6-image: '../img/sprite.png';
+$option-6: (0px, 696px, 0px, -696px, 50px, 42px, 105px, 1052px, '../img/sprite.png', 'option_6', );
+$option-7-name: 'option_7';
+$option-7-x: 0px;
+$option-7-y: 649px;
+$option-7-offset-x: 0px;
+$option-7-offset-y: -649px;
+$option-7-width: 55px;
+$option-7-height: 42px;
+$option-7-total-width: 105px;
+$option-7-total-height: 1052px;
+$option-7-image: '../img/sprite.png';
+$option-7: (0px, 649px, 0px, -649px, 55px, 42px, 105px, 1052px, '../img/sprite.png', 'option_7', );
+$option-8-name: 'option_8';
+$option-8-x: 0px;
+$option-8-y: 350px;
+$option-8-offset-x: 0px;
+$option-8-offset-y: -350px;
+$option-8-width: 24px;
+$option-8-height: 33px;
+$option-8-total-width: 105px;
+$option-8-total-height: 1052px;
+$option-8-image: '../img/sprite.png';
+$option-8: (0px, 350px, 0px, -350px, 24px, 33px, 105px, 1052px, '../img/sprite.png', 'option_8', );
+$phone-name: 'phone';
+$phone-x: 0px;
+$phone-y: 220px;
+$phone-offset-x: 0px;
+$phone-offset-y: -220px;
+$phone-width: 13px;
+$phone-height: 25px;
+$phone-total-width: 105px;
+$phone-total-height: 1052px;
+$phone-image: '../img/sprite.png';
+$phone: (0px, 220px, 0px, -220px, 13px, 25px, 105px, 1052px, '../img/sprite.png', 'phone', );
+$price-name: 'price';
+$price-x: 0px;
+$price-y: 190px;
+$price-offset-x: 0px;
+$price-offset-y: -190px;
+$price-width: 25px;
+$price-height: 25px;
+$price-total-width: 105px;
+$price-total-height: 1052px;
+$price-image: '../img/sprite.png';
+$price: (0px, 190px, 0px, -190px, 25px, 25px, 105px, 1052px, '../img/sprite.png', 'price', );
+$profi-name: 'profi';
+$profi-x: 0px;
+$profi-y: 790px;
+$profi-offset-x: 0px;
+$profi-offset-y: -790px;
+$profi-width: 105px;
+$profi-height: 44px;
+$profi-total-width: 105px;
+$profi-total-height: 1052px;
+$profi-image: '../img/sprite.png';
+$profi: (0px, 790px, 0px, -790px, 105px, 44px, 105px, 1052px, '../img/sprite.png', 'profi', );
+$search-hover-name: 'search-hover';
+$search-hover-x: 0px;
+$search-hover-y: 166px;
+$search-hover-offset-x: 0px;
+$search-hover-offset-y: -166px;
+$search-hover-width: 19px;
+$search-hover-height: 19px;
+$search-hover-total-width: 105px;
+$search-hover-total-height: 1052px;
+$search-hover-image: '../img/sprite.png';
+$search-hover: (0px, 166px, 0px, -166px, 19px, 19px, 105px, 1052px, '../img/sprite.png', 'search-hover', );
+$search-name: 'search';
+$search-x: 0px;
+$search-y: 142px;
+$search-offset-x: 0px;
+$search-offset-y: -142px;
+$search-width: 19px;
+$search-height: 19px;
+$search-total-width: 105px;
+$search-total-height: 1052px;
+$search-image: '../img/sprite.png';
+$search: (0px, 142px, 0px, -142px, 19px, 19px, 105px, 1052px, '../img/sprite.png', 'search', );
+$series-usage-1-name: 'series-usage_1';
+$series-usage-1-x: 0px;
+$series-usage-1-y: 604px;
+$series-usage-1-offset-x: 0px;
+$series-usage-1-offset-y: -604px;
+$series-usage-1-width: 39px;
+$series-usage-1-height: 40px;
+$series-usage-1-total-width: 105px;
+$series-usage-1-total-height: 1052px;
+$series-usage-1-image: '../img/sprite.png';
+$series-usage-1: (0px, 604px, 0px, -604px, 39px, 40px, 105px, 1052px, '../img/sprite.png', 'series-usage_1', );
+$series-usage-2-name: 'series-usage_2';
+$series-usage-2-x: 0px;
+$series-usage-2-y: 940px;
+$series-usage-2-offset-x: 0px;
+$series-usage-2-offset-y: -940px;
+$series-usage-2-width: 37px;
+$series-usage-2-height: 53px;
+$series-usage-2-total-width: 105px;
+$series-usage-2-total-height: 1052px;
+$series-usage-2-image: '../img/sprite.png';
+$series-usage-2: (0px, 940px, 0px, -940px, 37px, 53px, 105px, 1052px, '../img/sprite.png', 'series-usage_2', );
+$series-usage-3-name: 'series-usage_3';
+$series-usage-3-x: 0px;
+$series-usage-3-y: 743px;
+$series-usage-3-offset-x: 0px;
+$series-usage-3-offset-y: -743px;
+$series-usage-3-width: 40px;
+$series-usage-3-height: 42px;
+$series-usage-3-total-width: 105px;
+$series-usage-3-total-height: 1052px;
+$series-usage-3-image: '../img/sprite.png';
+$series-usage-3: (0px, 743px, 0px, -743px, 40px, 42px, 105px, 1052px, '../img/sprite.png', 'series-usage_3', );
+$series-usage-4-name: 'series-usage_4';
+$series-usage-4-x: 0px;
+$series-usage-4-y: 473px;
+$series-usage-4-offset-x: 0px;
+$series-usage-4-offset-y: -473px;
+$series-usage-4-width: 41px;
+$series-usage-4-height: 38px;
+$series-usage-4-total-width: 105px;
+$series-usage-4-total-height: 1052px;
+$series-usage-4-image: '../img/sprite.png';
+$series-usage-4: (0px, 473px, 0px, -473px, 41px, 38px, 105px, 1052px, '../img/sprite.png', 'series-usage_4', );
+$series-usage-5-name: 'series-usage_5';
+$series-usage-5-x: 0px;
+$series-usage-5-y: 560px;
+$series-usage-5-offset-x: 0px;
+$series-usage-5-offset-y: -560px;
+$series-usage-5-width: 39px;
+$series-usage-5-height: 39px;
+$series-usage-5-total-width: 105px;
+$series-usage-5-total-height: 1052px;
+$series-usage-5-image: '../img/sprite.png';
+$series-usage-5: (0px, 560px, 0px, -560px, 39px, 39px, 105px, 1052px, '../img/sprite.png', 'series-usage_5', );
+$temp-name: 'temp';
+$temp-x: 0px;
+$temp-y: 281px;
+$temp-offset-x: 0px;
+$temp-offset-y: -281px;
+$temp-width: 14px;
+$temp-height: 28px;
+$temp-total-width: 105px;
+$temp-total-height: 1052px;
+$temp-image: '../img/sprite.png';
+$temp: (0px, 281px, 0px, -281px, 14px, 28px, 105px, 1052px, '../img/sprite.png', 'temp', );
+$tweet-name: 'tweet';
+$tweet-x: 0px;
+$tweet-y: 0px;
+$tweet-offset-x: 0px;
+$tweet-offset-y: 0px;
+$tweet-width: 14px;
+$tweet-height: 12px;
+$tweet-total-width: 105px;
+$tweet-total-height: 1052px;
+$tweet-image: '../img/sprite.png';
+$tweet: (0px, 0px, 0px, 0px, 14px, 12px, 105px, 1052px, '../img/sprite.png', 'tweet', );
+$weight-name: 'weight';
+$weight-x: 0px;
+$weight-y: 250px;
+$weight-offset-x: 0px;
+$weight-offset-y: -250px;
+$weight-width: 16px;
+$weight-height: 26px;
+$weight-total-width: 105px;
+$weight-total-height: 1052px;
+$weight-image: '../img/sprite.png';
+$weight: (0px, 250px, 0px, -250px, 16px, 26px, 105px, 1052px, '../img/sprite.png', 'weight', );
+$spritesheet-width: 105px;
+$spritesheet-height: 1052px;
+$spritesheet-image: '../img/sprite.png';
+$spritesheet-sprites: ($basket, $best-price-guarantee, $cart-black, $clock, $date, $econom, $flag, $login, $option-1, $option-2, $option-3, $option-4, $option-5, $option-6, $option-7, $option-8, $phone, $price, $profi, $search-hover, $search, $series-usage-1, $series-usage-2, $series-usage-3, $series-usage-4, $series-usage-5, $temp, $tweet, $weight, );
+$spritesheet: (105px, 1052px, '../img/sprite.png', $spritesheet-sprites, );
+
+// The provided mixins are intended to be used with the array-like variables
+//
+// .icon-home {
+//   @include sprite-width($icon-home);
+// }
+//
+// .icon-email {
+//   @include sprite($icon-email);
+// }
+//
+// Example usage in HTML:
+//
+// `display: block` sprite:
+// <div class="icon-home"></div>
+//
+// To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+//
+// // CSS
+// .icon {
+//   display: inline-block;
+// }
+//
+// // HTML
+// <i class="icon icon-home"></i>
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+// The `sprites` mixin generates identical output to the CSS template
+//   but can be overridden inside of SCSS
+//
+// @include sprites($spritesheet-sprites);
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}

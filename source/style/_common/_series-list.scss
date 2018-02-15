@@ -1,0 +1,46 @@
+.series-list {
+	display: flex;
+
+	&__item {
+		display: inline-block;
+		margin-right: 10px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		@include phones {
+			margin-right: 5px;
+		}
+	}
+
+	&__link {
+		display: block;
+		width: 100%;
+		height: 15px;
+		font-weight: 700;
+		font-size: 12px;
+		line-height: 20px;
+		color: $yellow;
+		text-decoration: none;
+		vertical-align: middle;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		&:after {
+			display: inline-block;
+			content: '';
+			width: 1px;
+			height: 110%;
+			margin-left: 10px;
+			background: $gray-light;
+			vertical-align: top;
+
+			@include phones {
+				margin-left: 5px;
+			}
+		}
+	}
+}

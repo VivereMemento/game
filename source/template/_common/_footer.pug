@@ -1,0 +1,33 @@
+footer.footer
+	.footer__top
+		include ../_common/_social
+
+	.footer__bottom
+		.footer__bottom-item
+			+logo("Fregat", "logo.png", 'logo_position')
+			.footer__copyright
+				span &copy 2001-1014 Компания "Фрегат". Все права защищены.
+				span Интренет-маркетинг - агенство Netpeak
+		.footer__bottom-item
+			-
+				var items = [
+					[{text: 'Правила эксплуатации колес и роликов', href: '#'},
+					{text: 'Химическая стойкость изделий', href: '#'}],
+					[{text: 'Сопротивление колес качению', href: '#'},
+					{text: 'Типы подшипников', href: '#'}],
+					[{text: 'Типы кронштейнов', href: '#'},
+					{text: 'Варианты креплений', href: '#'}],
+					[{text: 'Система кодировки', href: '#'},
+					{text: 'Сертификаты на колеса', href: '#'}]
+				];
+
+			ul.footer__menu-list
+				each item in items
+					li.footer__menu-item
+						each i in item
+							a.footer__menu-link(href='' + i.href) #{i.text}
+
+		.footer__bottom-item
+			.footer__upload
+				span#upload-fregat Скачать каталог Фрегат
+				span#upload-torwegge Скачать каталог Torwegge

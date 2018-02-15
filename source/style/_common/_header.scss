@@ -1,0 +1,455 @@
+.header {
+	display: flex;
+	height: 80px;
+	background: #000;
+	position: relative;
+
+	@include phones {
+		height: 60px;
+		justify-content: flex-end;
+	}
+
+	&__part {
+		display: flex;
+		align-items: center;
+		height: 100%;
+		transition: .3s ease;
+
+		&-one {
+			width: 20%;
+			padding-left: 20px;
+
+			@include netbook {
+				width: 25%;
+			}
+
+			@include tablets {
+				width: 28%;
+			}
+
+			@include phones {
+				width: 50%;
+
+				&.passive {
+					width: 100%;
+					position: absolute;
+					padding-left: 0;
+
+					& .phones {
+						opacity: 0;
+					}
+				}
+			}
+		}
+
+		&-two {
+			width: 60%;
+
+			@include netbook {
+				width: 55%;
+			}
+
+			@include tablets {
+				width: 49%;
+			}
+
+			@include phones{
+				width: 100%;
+				height: initial;
+				position: absolute;
+				top: 100%;
+				left: -100%;
+				z-index: 2;
+				transition: .3s ease;
+			}
+		}
+
+		&-three {
+			width: 20%;
+			height: 100%;
+			background: #151515;
+			position: relative;
+
+			@include tablets {
+				width: 25%;
+			}
+
+			@include phones {
+				width: 50%;
+				background: #000;
+
+				&.active {
+					width: 100%;
+					background: #151515;
+
+					& .basket {
+						opacity: 1;
+						transition: .3s ease;
+					}
+				}
+			}
+		}
+	}
+}
+
+.phones {
+	padding-left: 18px;
+	margin-left: 30px;
+	position: relative;
+	//transition: .5s ease;
+
+	@include phones {
+		margin-left: 15px;
+	}
+
+	&:before {
+		display: inline-block;
+		content: '';
+		width: 15px;
+		height: 25px;
+		background: url(../img/phone.svg) no-repeat center;
+		background-size: contain;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	&__number {
+		display: block;
+		font: 400 12px/14px $RC;
+		color: #fff;
+
+		@include tablets {
+			font-size: 11px;
+			line-height: 13px;
+		}
+	}
+}
+
+.basket {
+	padding-left: 60px;
+	position: relative;
+	cursor: pointer;
+
+	@include tablets {
+		padding-left: 45px;
+	}
+
+	@include phones {
+		opacity: 0;
+	}
+
+	&:hover {
+		& .basket__item {
+			color: $yellow;
+		}
+	}
+
+	&:before {
+		display: block;
+		content: '';
+		width: 20px;
+		height: 20px;
+		background: url(../img/cart.svg) no-repeat center;
+		background-size: contain;
+		position: absolute;
+		top: 0;
+		left: 25px;
+		bottom: 0;
+		margin: auto 0;
+
+		@include tablets {
+			left: 15px;
+		}
+	}
+
+	&__item {
+		margin-bottom: 5px;
+		font: 300 12px/14px $RC;
+		color: $gray;
+		text-transform: uppercase;
+
+		@include tablets {
+			font-size: 11px;
+			line-height: 13px;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		& > span {
+			margin-left: 5px;
+			color: #fff;
+			text-transform: lowercase;
+		}
+	}
+}
+
+.header__search-btn,
+.header__login-btn {
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	position: absolute;
+	right: 0;
+	cursor: pointer;
+	transition: .3s ease;
+}
+
+.header__search-img,
+.header__login-img {
+	width: 50%;
+	height: 100%;
+}
+
+.header__search-btn {
+	bottom: 0;
+	background-color: $yellow;
+
+	@include phones {
+		width: 60px;
+		height: 60px;
+		right: 60px;
+		bottom: unset;
+	}
+
+	&:hover {
+		background-color: #000;
+
+		& .header__search-img {
+			fill: $yellow;
+		}
+	}
+}
+
+.header__login-btn {
+	top: 0;
+	background-color: #000;
+
+	@include netbook {
+		background-color: #151515;
+		z-index: 2;
+
+		& .header__login-img {
+			fill: #fff;
+		}
+	}
+
+	@include phones {
+		width: 60px;
+		height: 60px;
+		right: 0;
+		background: #151515;
+		z-index: 2;
+
+		& .header__login-img {
+			fill: #fff;
+		}
+	}
+
+	&:hover {
+		background-color: $yellow;
+
+		& .header__login-img {
+			fill: #000;
+		}
+	}
+}
+
+.header__login-img {
+	fill: $gray-light;
+}
+
+.menu-trigger {
+	display: none;
+	width: 40px;
+	height: 40px;
+	text-align: center;
+	background: #000;
+	position: absolute;
+	top: 0;
+	right: 0;
+	cursor: pointer;
+	transition: .3s;
+
+	@include netbook {
+		display: block;
+		padding: 10px;
+		z-index: 2;
+	}
+
+	@include phones {
+		width: 60px;
+		height: 60px;
+		padding: 20px 15px;
+		background-color: black;
+	}
+
+	&:hover {
+		background-color: $yellow;
+
+		@include phones {
+			background-color: black;
+		}
+	}
+
+	&:after {
+		display: none;
+	}
+
+	&.active {
+		& .menu-trigger__item {
+			margin-bottom: 0;
+			transform-origin: 100%;
+			position: relative;
+
+			&:first-child {
+				transform: rotate(-45deg);
+
+				@include netbook {
+					right: 2px;
+					top: 2px;
+				}
+
+				@include phones {
+					right: 3px;
+					top: -3px;
+				}
+			}
+
+			&:nth-child(2) {
+				display: none;
+			}
+
+			&:last-child {
+				transform: rotate(45deg);
+
+				@include netbook {
+					right: 2px;
+					top: 14px;
+				}
+
+				@include phones {
+					right: 3px;
+					top: 15px;
+				}
+			}
+		}
+	}
+	
+	&__item {
+		width: 100%;
+		height: 3px;
+		margin-bottom: 5px;
+		background: #fff;
+		transition: .3s ease;
+
+		@include phones {
+			width: 100%;
+			height: 3px;
+			background: #fff;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.search {
+	width: 100%;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	z-index: 1;
+	perspective: 150px;
+	perspective-origin: center center;
+	display: none;
+
+	&__wrap {
+		width: 100%;
+		padding: 25px 20px;
+		background: $yellow;
+		transition: .4s;
+		transform: rotateX(-124deg);
+		transform-origin: 100% 0;
+
+		&.opened {
+			transform: rotateX(0);
+		}
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 50%;
+		margin: 0 auto;
+		padding-top: 15px;
+		padding-bottom: 30px;
+
+		@include tablets {
+			width: 70%;
+		}
+
+		@include phones {
+			width: 100%;
+		}
+	}
+
+
+	&__input {
+		width: 85%;
+		position: relative;
+
+		@include netbook {
+			width: 82%;
+		}
+
+		&:after {
+			display: block;
+			content: '';
+			width: 100%;
+			height: 1px;
+			background: #000;
+			position: absolute;
+			top: 92%;
+			left: 0;
+
+			@include tablets {
+				top: 91%;
+			}
+		}
+
+		& input {
+			width: 100%;
+			padding: 6px 0;
+			font-weight: 700;
+			font-style: italic;
+			background: $yellow;
+			border: none;
+			outline: none;
+
+			&:focus ~ label,
+			&:valid ~ label {
+				top: -14px;
+				font-size: 12px;
+				
+			}
+		}
+
+		& label {
+			font-weight: 700;
+			font-style: italic;
+			color: #000;
+			position: absolute;
+			pointer-events: none;
+			left: 0;
+			top: 11px;
+			-webkit-transition: 300ms ease all;
+			transition: 300ms ease all;
+		}
+	}
+
+}

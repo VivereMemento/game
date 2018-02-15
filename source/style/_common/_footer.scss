@@ -1,0 +1,159 @@
+.footer {
+	color: #8a8a8a;
+	background: #282828;
+	
+	&__bottom {
+		padding: 0 35px;
+		padding-top: 45px;
+		font-size: 13px;
+		font-weight: 300;
+		display: flex;
+		position: relative;
+
+		@include phones {
+			flex-wrap: wrap;
+			padding-top: 90px;
+		}
+
+		&-item {
+			width: 20%;
+
+			@include phones {
+				width: 100%;
+			}
+
+			&:first-child {
+				@include phones {
+					order: 2;
+				}
+			}
+
+			&:nth-child(2) {
+				width: 60%;
+
+				@include phones {
+					width: 100%;
+					order: 1;
+				}
+			}
+		}
+	}
+
+	&__copyright {
+		margin-top: 15px;
+
+		&  span {
+			display: block;
+			margin-bottom: 10px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			@include phones {
+				margin-bottom: 20px;
+				text-align: center;
+			}
+		}
+	}
+
+	&__menu-list {
+		display: flex;
+		justify-content: space-between;
+		height: 100%;
+		padding: 0 10px;
+		padding-top: 58px;
+
+		@include laptop {
+			margin: auto;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			width: 70%;
+			padding: 0;
+		}
+
+		@include phones {
+			width: 100%;
+		}
+	}
+
+	&__menu-item {
+		@include laptop {
+			width: 39%;
+		}
+
+		@include phones {
+			width: 100%;
+			margin-bottom: 20px;
+		}
+		&:nth-child(2) {
+			@include laptop {
+				order: 2;
+			}
+		}
+		&:nth-child(3) {
+			@include laptop {
+				order: 2;
+			}
+		}
+	}
+
+	&__menu-link {
+		display: block;
+		margin-bottom: 10px;
+		color: #8a8a8a;
+		text-decoration: none;
+
+		@include phones {
+			margin-bottom: 20px;
+			text-align: center;
+		}
+
+		&:hover {
+			color: #fff;
+			text-decoration: underline;
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__upload {
+		height: 100%;
+		margin-left: 50px;
+		padding-top: 58px;
+		background: url(../img/upload.png) no-repeat top left;
+
+		@include laptop {
+			margin-left: 0;
+		}
+
+		@include phones {
+			margin-bottom: 20px;
+			padding-top: 0;
+			text-align: center;
+			background: none;
+		}
+		& span {
+			display: inline-block;
+			width: 100%;
+			margin-bottom: 10px;
+			cursor: pointer;
+
+			@include phones {
+				margin-bottom: 20px;
+				color: $yellow;
+			}
+
+			&:hover {
+				color: #fff;
+				text-decoration: underline;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

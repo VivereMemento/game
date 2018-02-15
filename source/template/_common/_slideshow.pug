@@ -1,0 +1,29 @@
+.slideshow__display
+	.slideshow__promo
+		.slideshow__promo-inner
+			.slideshow__promo-season Mid-season
+			.slideshow__promo-sale sale
+			.slideshow__promo-upto 
+				span.slideshow__promo-up up
+				span.slideshow__promo-to to
+			.slideshow__promo-off 50 <span class="persent">%</span> off
+		.slideshow__btn
+			a.btn.btn_promo(href="#") Shop now
+	-
+		var items = [
+			"./assets/img/slide_1.jpg",
+			"./assets/img/slide_2.jpg",
+			"./assets/img/slide_1.jpg",
+			"./assets/img/slide_1.jpg"
+		]
+	
+	ul.slideshow__list
+		each item in items
+			li.slideshow__item.fade
+				img.slideshow__img(src="" + item style="width:100%")
+
+	div.dots
+		span(class="dot" onclick="currentSlide(1)")
+		span(class="dot" onclick="currentSlide(2)")
+		span(class="dot" onclick="currentSlide(3)")
+		span(class="dot" onclick="currentSlide(4)")

@@ -1,0 +1,8 @@
+.breadcrumbs
+	-
+		var items = ["Главная", "Каталог запчастей", "Бытовые вентеляторы", "Интеллектуальные вентеляторы", "Smart", "Smart IR", "Внешний датчик температуры ЗДТ2"];
+
+	ul.breadcrumbs__list
+		each item in items
+			li(class="breadcrumbs__item" + ((item == "Catalog") ? ' active' : ''))
+				a(href="#").breadcrumbs__link #{item}
