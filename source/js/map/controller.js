@@ -1,5 +1,3 @@
-// const Binder = require('./data-binding.js');
-
 const Controller = (function () {
 	class Controller {
 		initialize(model, view) {
