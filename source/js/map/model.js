@@ -16,7 +16,13 @@ const Model = (function () {
 			this.imgLoadCount = 0;
 			this.imgLoaded = false;
 			this.jsonLoaded = false;
-			this.tilesets = []
+			this.tilesets = [];
+			this.view = {
+				x: 0,
+				y: 0,
+				w: 0,
+				h: 0
+			}
 		}
 
 		parseMap(tilesJSON, resolve) {
@@ -29,6 +35,8 @@ const Model = (function () {
 			self.tSize.y = self.mapData.tileheight;
 			self.mapSize.x = self.xCount * self.tSize.x;
 			self.mapSize.y = self.yCount * self.tSize.y;
+			self.view.w = self.mapSize.x;
+			self.view.h = self.mapSize.y;
 
 
 

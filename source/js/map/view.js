@@ -46,6 +46,19 @@ const View = (function () {
 			return null;
 		}
 
+		isVisible(x,y,width,height) {
+			if (
+				x + width < this.model.view.x ||
+				y + height < this.model.view.y ||
+				x > this.model.view.x + this.model.view.w
+				|| y > this.model.view.y + this.model.view.h
+			) {
+				return false;
+			}
+
+			return true;
+		}
+
 		draw() {
 
 			let self = this;
@@ -66,6 +79,13 @@ const View = (function () {
 						let pX = (i % self.model.xCount) * self.model.tSize.x;
 
 						let pY = Math.floor(i / self.model.xCount) * self.model.tSize.y;
+						console.log();
+						if (!this.isVisible(pX, pY, this.model.tSize.x, this.model.tSize.y)) {
+							continue;
+						}
+
+						pX -= this.model.view.x;
+						pY -= this.model.view.y;
 						
 						if (tile.img) {
 							self.ctx.drawImage(tile.img, tile.px, tile.py, self.model.tSize.x, self.model.tSize.y, pX, pY, self.model.tSize.x, self.model.tSize.y)

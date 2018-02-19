@@ -22,12 +22,12 @@
 				})
 			}
 			this.jsonLoaded = true;
-			resolve(this.sprites);
 		}
 
-		loadImg(imgName) {
+		loadImg(imgName, resolve) {
 			this.image.addEventListener('load', () => {
 				this.imgLoaded = true;
+				resolve();
 			});
 
 			this.image.src = imgName;
@@ -56,7 +56,8 @@
 					if (httpReq.readyState == 4) {
 						if (httpReq.status == 200) {
 							data = JSON.parse(httpReq.responseText);
-							self.parseAtlas(data, resolve);
+							self.parseAtlas(data);
+							self.loadImg(atlasImg, resolve);
 						} else {
 							reject(new Error(httpReq.statusText));
 						}
@@ -64,7 +65,6 @@
 				};
 				httpReq.open("GET", url, true);
 				httpReq.send();
-				self.loadImg(atlasImg);
 			});
 		}
 	}

@@ -4,16 +4,25 @@ const Model = (function () {
 	class Model {
 		constructor() {
 			this.mapData = null;
+			this.tLayer = null;
 			this.xCount = 0;
 			this.yCount = 0;
 			this.tSize = {
 				x: null,
 				y: null
-			};
+			},
 			this.mapSize = {
 				x: null,
 				y: null
-			};
+			},
+			this.jsonLoaded = false;
+			this.tilesets = [];
+			this.view = {
+				x: 0,
+				y: 0,
+				w: 0,
+				h: 0
+			}
 		}
 
 		parseObjects(tilesJSON, resolve) {
@@ -26,10 +35,12 @@ const Model = (function () {
 			self.tSize.y = self.mapData.tileheight;
 			self.mapSize.x = self.xCount * self.tSize.x;
 			self.mapSize.y = self.yCount * self.tSize.y;
+			self.view.w = self.mapSize.x;
+			self.view.h = self.mapSize.y;
 			
 
-			for (let j = 0; j < this.mapData.layers.length; j++) {
-				if (this.mapData.layers[j].type === 'objectgroup') {
+			for (let j = 0; j < self.mapData.layers.length; j++) {
+				if (self.mapData.layers[j].type === 'objectgroup') {
 					let entities = self.mapData.layers[j];
 
 					for (let i = 0; i < entities.objects.length; i++) {
@@ -37,14 +48,14 @@ const Model = (function () {
 						
 						try {
 
-							let obj = gameManager.factory(e.type);
+							let obj = new gameManager.factory(e.type);
 
 							obj.name = e.name;
 							obj.pos_x = e.x;
 							obj.pos_y = e.y;
 							obj.size_x = e.width;
 							obj.size_y = e.height;
-
+	
 							gameManager.entities.push(obj);
 
 							if (obj.name === 'player') {
@@ -57,7 +68,7 @@ const Model = (function () {
 					}
 				}
 			}
-			resolve(gameManager.entities);
+			resolve();
 		};
 
 		sendAjax(url) {

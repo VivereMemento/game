@@ -1,4 +1,5 @@
 let spriteManager = require('../sprite_manager');
+const gameManager = require('../game_manager');
 
 const Controller = (function () {
 	class Controller {
@@ -11,8 +12,8 @@ const Controller = (function () {
 		start() {
 			let self = this;
 			self.model.sendAjax('./map.json').then(() => {
-				spriteManager.sendAjax('./sprites.json', './assets/img/spritesheet.png').then((data) => {
-					this.view.drawSprite(data[13].name, 70, 70);
+				spriteManager.sendAjax('./sprites.json', './assets/img/spritesheet.png').then(() => {
+					this.view.drawSprite();
 				});
 			})
 		}

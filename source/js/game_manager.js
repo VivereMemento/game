@@ -2,8 +2,8 @@
 	class GameManager {
 		constructor() {
 			this.factory = function (type) {
-				return {type: type}
-			};
+				this.type = type
+			}
 			this.entities = [];
 		}
 
